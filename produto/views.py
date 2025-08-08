@@ -7,7 +7,7 @@ def index(request):
     produtos = Produto.objects.all
     context = {'produtos':produtos,
                }
-    return render(request, 'index.html', context)
+    return render(request, 'produto/index.html', context)
 
 def adicionar(request):
     nome = request.POST["nome"]
@@ -31,7 +31,7 @@ def editar_form(request, pk):
     context = {
         'produto': produto
     }
-    return render(request, 'editar.html', context)
+    return render(request, 'produto/editar.html', context)
 
 def editar(request, pk):
     produto = Produto.objects.get(id=pk)
