@@ -68,37 +68,27 @@
 </head>
 <body>
 
-  <h2>Lista de Produtos no Carrinho</h2>
+  <h2>Pedidos Anteriores</h2>
   <a href="/pedido/olhar_produtos/">Olhar Produtos<BR></a>
-
-  <a href="/pedido/pedidos_anteriores/">Pedidos Anteriores<BR></a>
 
   <table id="tabela-produtos">
     <thead>
       <tr>
-        <th>Produto</th>
-        <th>Preço (R$)</th>
-        <th>quantidade</th>
+        <th>id</th>
+        <th>Status</th>
         <th>Ações</th>
       </tr>
     </thead>
-    {% for produto in produtos %}
+    {% for pedido in pedidos %}
         <tbody>
         <tr>
-            <td>{{produto.produto.name}}</td>
-            <td>{{produto.produto.valor}}</td>
-            <td>{{produto.quantidade}}</td>
-            <td>
-              <a class="btn btn-edit" href="aumentar/{{produto.id}}/">+</a>
-              <a class="btn btn-edit" href="diminuir/{{produto.id}}/">-</a>
-              <a class="btn btn-delete" href="delete/{{produto.id}}/">Delete</a>            
+            <td>{{pedido.id}}</td>
+            <td>{{pedido.status}}</td>
+            <td><a class="btn btn-edit" href="/pedido/verPedido/{{pedido.id}}/">Ver Pedido</a>
             </td>
-           
         </tr>
         </tbody>
     {%endfor%}
   </table>
-  <a class="btn btn-edit" href="finalizar/">Finalizar o Pedido</a>
-
 </body>
 </html>

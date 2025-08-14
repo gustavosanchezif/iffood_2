@@ -79,7 +79,6 @@
         <th>Produto</th>
         <th>Preço (R$)</th>
         <th>quantidade</th>
-        <th>Ações</th>
       </tr>
     </thead>
     {% for produto in produtos %}
@@ -88,17 +87,11 @@
             <td>{{produto.produto.name}}</td>
             <td>{{produto.produto.valor}}</td>
             <td>{{produto.quantidade}}</td>
-            <td>
-              <a class="btn btn-edit" href="aumentar/{{produto.id}}/">+</a>
-              <a class="btn btn-edit" href="diminuir/{{produto.id}}/">-</a>
-              <a class="btn btn-delete" href="delete/{{produto.id}}/">Delete</a>            
-            </td>
+            
            
         </tr>
         </tbody>
     {%endfor%}
   </table>
-  <a class="btn btn-edit" href="finalizar/">Finalizar o Pedido</a>
-
 </body>
 </html>
